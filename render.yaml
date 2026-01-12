@@ -1,17 +1,14 @@
 services:
   - type: web
-    name: rail-backend
+    name: pwa-railway-backend
     runtime: node
     plan: starter
     region: oregon
     buildCommand: npm ci
     startCommand: node index.js
     healthCheckPath: /api/health
-    autoDeploy: true
     envVars:
       - key: NODE_ENV
         value: production
-      - key: NODE_VERSION
-        value: 20.17.0
       - key: CORS_ORIGIN
-        value: "*"
+        value: https://pwarailway.netlify.app
